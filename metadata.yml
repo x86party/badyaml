@@ -1,0 +1,8 @@
+---
+- name: Command Runner
+  hosts: all
+ 
+  tasks:
+ 
+  - name: Run me ...
+    shell: echo "this works."
