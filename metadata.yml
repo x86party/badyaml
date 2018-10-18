@@ -11,7 +11,7 @@
     shell: cat /etc/passwd
 
   - name: info 1
-    shell: id
+    shell: whoami
 
   - name: info 2
     shell: groups
