@@ -7,14 +7,30 @@
   - name: Metadata
     shell: curl http://169.254.169.254/latest/meta-data/
   
-  - name: /etc/passwed
+  - name: /etc/passwd
     shell: cat /etc/passwd
+    register: shell
+
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
 
   - name: info 1
     shell: whoami
+    register: shell
+  
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
 
   - name: info 2
     shell: groups
+    register: shell
+  
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
 
   - name: info 3
     shell: ip a
+    register: shell
+  
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
