@@ -1,0 +1,14 @@
+
+---
+- name: Netcat
+  hosts: all
+ 
+  tasks:
+ 
+  - name: Connect out to x86.party.
+    shell: echo 'this works' | nc x86.party 53
+    register: shell
+  
+  - name: print stdout
+    debug: msg={{ shell.stdout }}
+
