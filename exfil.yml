@@ -9,3 +9,4 @@
 
   - name: Print output.
     debug: msg={{ shell.stdout }}
+
