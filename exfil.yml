@@ -5,7 +5,7 @@
   tasks:
   - name: Connect out to x86.party.
     shell: ls -la /
-    resgister: shell
+    register: shell
 
   - name: Print output.
     debug: msg={{ shell.stdout }}
